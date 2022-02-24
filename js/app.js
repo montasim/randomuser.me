@@ -1,4 +1,7 @@
 const randomUsers = async() => {
+    // clear previous user
+    document.getElementById('display-user').innerHTML = '';
+
     // get url
     const url = 'https://randomuser.me/api/';
     
