@@ -105,33 +105,27 @@ const randomUsers = async() => {
             `;
 
             document.getElementById('display-name').onclick = function() {
-              document.getElementById('pretext-value').innerText = 'Hi, My name is';
-              document.getElementById('value').innerText = `${user.results[0].name.title + ' '+ user.results[0].name.first + ' ' + user.results[0].name.last}`;
+              changeValue('Hi, My name is', `${user.results[0].name.title + ' '+ user.results[0].name.first + ' ' + user.results[0].name.last}`);
             }
 
             document.getElementById('display-email').onclick = function() {
-              document.getElementById('pretext-value').innerText = 'My email address is';
-              document.getElementById('value').innerText = `${user.results[0].email}`;
+              changeValue('My email address is', `${user.results[0].email}`);
             }
 
             document.getElementById('display-dob').onclick = function() {
-              document.getElementById('pretext-value').innerText = 'My birthday is';
-              document.getElementById('value').innerText = `${user.results[0].dob.date.slice(0, 10)}`;
+              changeValue('My birthday is', `${user.results[0].dob.date.slice(0, 10)}`);
             }
 
             document.getElementById('display-location').onclick = function() {
-              document.getElementById('pretext-value').innerText = 'My address is';
-              document.getElementById('value').innerText = `${user.results[0].location.city + ', ' + user.results[0].location.state + ', ' + user.results[0].location.country}`;
+              changeValue('My address is', `${user.results[0].location.city + ', ' + user.results[0].location.state + ', ' + user.results[0].location.country}`);
             }
 
             document.getElementById('display-phone').onclick = function() {
-              document.getElementById('pretext-value').innerText = 'My phone number is';
-              document.getElementById('value').innerText = `${user.results[0].phone}`;
+              changeValue('My phone number is', `${user.results[0].phone}`);
             }
 
             document.getElementById('display-password').onclick = function() {
-              document.getElementById('pretext-value').innerText = 'My password is';
-              document.getElementById('value').innerText = `${user.results[0].login.password}`;
+              changeValue('My password is', `${user.results[0].login.password}`);
             }
         }
 
@@ -142,3 +136,8 @@ const randomUsers = async() => {
 
 // call function
 randomUsers();
+
+const changeValue = (value1, value2) => {
+  document.getElementById('pretext-value').innerText = value1;
+  document.getElementById('value').innerText = value2;
+}
