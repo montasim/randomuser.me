@@ -16,19 +16,15 @@ const randomUsers = async() => {
         // display field
         const displayUser = document.getElementById('display-user');
 
-        // create a div
-        const div = document.createElement('div');
-
         if(user.info.results < 0){
-            div.innerHTML = `
+          displayUser.innerHTML = `
             <div class=" mx-auto text-center">
                 <p>User Not Found!</p>
             </div>
             `
-            displayUser.appendChild(div);
         }
         else{
-            div.innerHTML = `
+          displayUser.innerHTML = `
             <div>
               <div class="text-center text-white p-5">
                 <h1 class="h1 text-uppercase fw-bold">RANDOM USER GENERATOR</h1>
@@ -98,7 +94,6 @@ const randomUsers = async() => {
               </div>
             </div>
             `
-            displayUser.appendChild(div);
         }
 
     } catch (error) {
