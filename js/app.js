@@ -1,3 +1,4 @@
+// display random user
 const randomUsers = async() => {
     // clear previous user
     document.getElementById('display-user').innerHTML = '';
@@ -104,32 +105,39 @@ const randomUsers = async() => {
             </div>
             `;
 
-            document.getElementById('display-name').onclick = function() {
+            // display name on icon click
+            document.getElementById('display-name').onclick = _ => {
               changeValue('Hi, My name is', `${user.results[0].name.title + ' '+ user.results[0].name.first + ' ' + user.results[0].name.last}`);
             }
 
-            document.getElementById('display-email').onclick = function() {
+            // display email on icon click
+            document.getElementById('display-email').onclick = _ => {
               changeValue('My email address is', `${user.results[0].email}`);
             }
 
-            document.getElementById('display-dob').onclick = function() {
+            // display date of birth on icon click
+            document.getElementById('display-dob').onclick = _ => {
               changeValue('My birthday is', `${user.results[0].dob.date.slice(0, 10)}`);
             }
 
-            document.getElementById('display-location').onclick = function() {
+            // display location on icon click
+            document.getElementById('display-location').onclick = _ => {
               changeValue('My address is', `${user.results[0].location.city + ', ' + user.results[0].location.state + ', ' + user.results[0].location.country}`);
             }
 
-            document.getElementById('display-phone').onclick = function() {
+            // display phone number on icon click
+            document.getElementById('display-phone').onclick = _ => {
               changeValue('My phone number is', `${user.results[0].phone}`);
             }
 
-            document.getElementById('display-password').onclick = function() {
+            // display password on icon click
+            document.getElementById('display-password').onclick = _ => {
               changeValue('My password is', `${user.results[0].login.password}`);
             }
         }
-
-    } catch (error) {
+    } 
+    // display api data fetch error
+    catch (error) {
         console.log(error);
     }
 }
