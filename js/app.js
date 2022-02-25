@@ -137,6 +137,7 @@ const randomUsers = async() => {
 // call function
 randomUsers();
 
+// change value on button click
 const changeValue = (value1, value2) => {
   document.getElementById('pretext-value').innerText = value1;
   document.getElementById('value').innerText = value2;
